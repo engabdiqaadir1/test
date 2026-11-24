@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>fishing</title>
+    <link rel="stylesheet" href="./fishing12_files/style.css">
+</head>
+<body>
+    <div class="top">
+        <h1>welcome kaluun same</h1>
+        <div class="right">
+            <button onclick="showmessage()">click me</button>
+            <nav>
+                <a href="http://127.0.0.1:5500/index.html#home">Home</a>
+                <a href="http://127.0.0.1:5500/index.html#fishing">All fishing</a>
+                <a href="http://127.0.0.1:5500/index.html#courses">Courses</a>
+                <a href="http://127.0.0.1:5500/index.html#gallery">Gallery</a>
+                <a href="http://127.0.0.1:5500/index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>ku soo dhawoow  macmiil.
+            
+        </p>
+        <p>waxa ka helaysa dhaman</p>
+        <p>kaluunada kala duwan</p>
+        <p>isagoo hada bada laga so saray</p>
+        <p id="msg"></p>
+    </section>
+
+    <section id="fishing">
+        <h2>All fishing</h2>
+        <p>Noocyada kalluumeysiga oo dhan.</p>
+    </section>
+
+    <section id="courses">
+        <h2>Courses</h2>
+        <p>nocyada kaluunka  laga hello.</p>
+        <p>derag</p>
+        <p>tuune</p>
+        <p>xudaar</p>
+    </section>
+
+    <section id="gallery">
+        <h2>My Gallery</h2>
+        <div class="grid">
+            <img class="pic" src="./fishing12_files/klun.jpeg" alt="kalluun">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form onsubmit="sendForm(event)">
+            <input type="text" id="name" placeholder="Magacaaga" required="">
+            <textarea placeholder="Fariintaada" required=""></textarea>
+            <button type="submit">Dir</button>
+            <p id="formMsg"></p>
+        </form>
+    </section>
+
+    <script>
+        function showmessage() {
+            document.getElementById("msg").textContent = "Soo dhawoow Kaluun Same!";
+            document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+        }
+        function sendForm(e) {
+            e.preventDefault();
+            var n = document.getElementById("name").value;
+            document.getElementById("formMsg").textContent = "Mahadsanid " + n + ", fariinta waa la helay.";
+            e.target.reset();
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
